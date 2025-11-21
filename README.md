@@ -2,8 +2,7 @@
 
 ## Descrizione
 
-Breve introduzione al progetto: spiega cosa fa, a chi è destinato e qual è il suo obiettivo principale.  
-Puoi aggiungere informazioni tecniche di base o il contesto in cui il progetto è stato sviluppato.
+Gestire le pratiche degli utenti per permettere l'inserimento, la revisione e la firma digitale della pratica.
 
 ---
 
@@ -41,6 +40,7 @@ Esempio di organizzazione delle cartelle:
 - [Mario Rossi](profiles/mario.profile.md)
 - [Lucia Bianchi](profiles/lucia.profile.md)
 - [Giovanni Verdi](profiles/giovanni.profile.md)
+- [Roberto Monai](profiles/robext68.profile.md)
 - [KB3268](profiles/KB3268.profile.md)
 
 ---

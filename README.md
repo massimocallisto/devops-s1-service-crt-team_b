@@ -40,6 +40,7 @@ Esempio di organizzazione delle cartelle:
 - [Mario Rossi](profiles/mario.profile.md)
 - [Lucia Bianchi](profiles/lucia.profile.md)
 - [Giovanni Verdi](profiles/giovanni.profile.md)
+- [Walter Naldoni](profiles/Walshiny.profile.md)
 - [Giampiero Starnino](profiles/giampiero.profile.md)
 - [Roberto Monai](profiles/robext68.profile.md)
 - [KB3268](profiles/KB3268.profile.md)

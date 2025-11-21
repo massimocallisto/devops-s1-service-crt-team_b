@@ -41,6 +41,7 @@ Esempio di organizzazione delle cartelle:
 - [Lucia Bianchi](profiles/lucia.profile.md)
 - [Giovanni Verdi](profiles/giovanni.profile.md)
 - [Roberto Monai](profiles/robext68.profile.md)
+- [KB3268](profiles/KB3268.profile.md)
 
 ---
 

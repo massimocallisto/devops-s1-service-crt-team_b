@@ -1,12 +1,14 @@
 # Servizio della PA - Gestione Pratiche
 
 ## Descrizione
+
 Breve introduzione al progetto: spiega cosa fa, a chi è destinato e qual è il suo obiettivo principale.  
 Puoi aggiungere informazioni tecniche di base o il contesto in cui il progetto è stato sviluppato.
 
 ---
 
 ## Struttura del Progetto
+
 Esempio di organizzazione delle cartelle:
 
 ```
@@ -21,6 +23,7 @@ Esempio di organizzazione delle cartelle:
 ---
 
 ## Contributi
+
 1. Crea un branch di sviluppo:
    ```bash
    git checkout -b feature/<nome-feature>
@@ -34,12 +37,15 @@ Esempio di organizzazione delle cartelle:
 ---
 
 ## Autori
-- [Mario Rossi](profiles/mario.profile.md)  
-- [Lucia Bianchi](profiles/lucia.profile.md)  
+
+- [Mario Rossi](profiles/mario.profile.md)
+- [Lucia Bianchi](profiles/lucia.profile.md)
 - [Giovanni Verdi](profiles/giovanni.profile.md)
+- [KB3268](profiles/KB3268.profile.md)
 
 ---
 
 ## Licenza
+
 Questo progetto è distribuito sotto licenza MIT.  
 Consulta il file [LICENSE](LICENSE) per maggiori dettagli.

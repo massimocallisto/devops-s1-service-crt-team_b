@@ -27,7 +27,7 @@ jobs:
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:
-          name: documentation-artifact
+          name: $SAFE_BRANCH_NAME-artifact
           path: docs-output/
 
       #- name: Send package to remote server

@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - feature/update-ci-robext68
-      #- feature/*
+  pull_request:
+    branches:
+      - feature/update-ci-robext68
 
 jobs:
   build-and-send:
@@ -16,16 +18,16 @@ jobs:
       - name: Build package
         env:
           BRANCH_NAME: ${{ github.ref_name }}
+          REPO_NAME: ${{ github.event.repository.name }}
         run: |
           mkdir -p docs-output/
           echo "Contenuto della build per branch $BRANCH_NAME" > docs-output/info.txt
-          zip -r docs-output/${{ github.event.repository.name }}-update-ci-robext68.zip src/ docs/  # esempio di packaging
-
+          zip -r docs-output/${REPO_NAME}-update-ci-robext68.zip ./ docs/  # esempio di packaging
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:
           name: documentation-artifact
-          path: docs-output/
+          path: docs-output/${REPO_NAME}-update-ci-robext68.zip
       #- name: Send package to remote server
       #  env:
       #    REMOTE_URL: ${{ secrets.REMOTE_URL }}

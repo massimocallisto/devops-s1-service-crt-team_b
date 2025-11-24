@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p docs-output/
           echo "Contenuto della build per branch $BRANCH_NAME" > docs-output/info.txt
-          zip -r docs-output/${REPO_NAME}-update-ci-robext68.zip ./ docs/  # esempio di packaging
+          zip -r docs-output/${REPO_NAME}-update-ci-robext68.zip src/ docs/  # esempio di packaging
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
         with:

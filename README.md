@@ -51,3 +51,26 @@ Esempio di organizzazione delle cartelle:
 
 Questo progetto è distribuito sotto licenza MIT.  
 Consulta il file [LICENSE](LICENSE) per maggiori dettagli.
+
+## Docker Instructions
+
+### Building and Running with Docker
+
+You can run this application using Docker in two ways: using Docker directly or using Docker Compose.
+
+#### Using Docker directly
+
+1. Build the Docker image:
+
+    docker build -t fastapi-status .
+
+2. Run the container:
+
+    docker run -p 8000:8000 --name fastapi-status fastapi-status
+
+### Testing the API
+
+Once the container is running (using either method), you can test the API check http://localhost:8000/status
+
+
+

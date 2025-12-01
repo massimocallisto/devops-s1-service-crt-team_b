@@ -17,6 +17,6 @@ Linguaggi di programmazione:
 
 - GitHub: [github.com/robext68](https://github.com)
 
-Aggiornato in data : 24/11/2025
+Aggiornato in data : 01/12/2025
 
 ---

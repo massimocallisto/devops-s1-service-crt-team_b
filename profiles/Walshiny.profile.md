@@ -1,4 +1,4 @@
-# Profilo – <Nickname>
+# Profilo – <Walter Naldoni>
 
 ## Sommario
 Sono Walter Naldoni e sono responsabile del datawarehouse della Sanità in Regioen Toscana

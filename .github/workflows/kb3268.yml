@@ -16,7 +16,7 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          SAFE_BRANCH_NAME="${BRANCH_NAME//\//_}"
+          SAFE_BRANCH_NAME="${BRANCH_NAME//\//_}" # Sostituisce le barre con underscore per evitare problemi nei nomi dei file
           mkdir -p docs-output/
           echo "Contenuto della build per branch $BRANCH_NAME" > docs-output/info.txt
           zip -r docs-output/package_$SAFE_BRANCH_NAME.zip profiles/ docs/  # esempio di packaging
@@ -24,7 +24,7 @@ jobs:
       - name: Upload documentation artifact - Aggiornamento documentazione
         uses: actions/upload-artifact@v4
         with:
-          name: documentation-artifact
+          name: ${{ env.SAFE_BRANCH_NAME }}-artifact
           path: docs-output/
       - name: Send package to remote server - Invio pacchetto al server remoto
         env:

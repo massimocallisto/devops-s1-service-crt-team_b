@@ -32,13 +32,13 @@ jobs:
           name: ${{ env.SAFE_BRANCH_NAME }}-artifact
           path: docs-output/
 
-      #- name: Send package to remote server
-      #  env:
-      #    REMOTE_URL: ${{ secrets.REMOTE_URL }}
-      #    REMOTE_TOKEN: ${{ secrets.REMOTE_TOKEN }}
-      #    BRANCH_NAME: ${{ github.ref_name }}
-      #  run: |
-      #    curl -X POST -H "Authorization: Bearer $REMOTE_TOKEN" -F "file=@output/package_$BRANCH_NAME.zip" "$REMOTE_URL/upload"
+      - name: Send package to remote server
+        env:
+          REMOTE_URL: ${{ secrets.REMOTE_URL }}
+          REMOTE_TOKEN: ${{ secrets.REMOTE_TOKEN }}
+          BRANCH_NAME: ${{ github.ref_name }}
+        run: |
+          curl -X POST -H "Authorization: Bearer $REMOTE_TOKEN" -F "file=@output/package_$SAFE_BRANCH_NAME.zip" "$REMOTE_URL/upload"
       #- name: Send package via HTTP POST
       #  uses: fjogeleit/http-request-action@v1
       #  with:

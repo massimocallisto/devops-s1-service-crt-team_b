@@ -6,6 +6,7 @@ on:
       - feature/update-ci-walshiny
       #- feature/* 
 
+
 jobs:
   build-and-send:
     runs-on: ubuntu-latest
@@ -17,10 +18,10 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.ref_name }}
         run: |
-          SAFE_BRANCH_NAME="${BRANCH_NAME//\//_}
+          SAFE_BRANCH_NAME="${BRANCH_NAME//\//_}"
           mkdir -p docs-output/
           echo "Contenuto della build per branch $BRANCH_NAME" > docs-output/info.txt
-          zip -r docs-output/package_$BRANCH_NAME.zip profiles/ docs/  # esempio di packaging
+          zip -r docs-output/package_$SAFE_BRANCH_NAME.zip profiles/ docs/  # esempio di packaging
 
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
@@ -29,16 +30,21 @@ jobs:
           path: docs-output/
       - name: Send package to remote server
         env:
-         REMOTE_URL: ${{ secrets.REMOTE_URL }}
-         REMOTE_TOKEN: ${{ secrets.REMOTE_TOKEN }}
+          REMOTE_URL: ${{ secrets.REMOTE_URL }}
+          REMOTE_TOKEN: ${{ secrets.REMOTE_TOKEN }}
           BRANCH_NAME: ${{ github.ref_name }}
-      #  run: |
-      #    curl -X POST -H "Authorization: Bearer $REMOTE_TOKEN" -F "file=@output/package_$BRANCH_NAME.zip" "$REMOTE_URL/upload"
+        run: |
+          SAFE_BRANCH_NAME="${BRANCH_NAME//\//_}"
+          curl -X POST -H "Authorization: Bearer $REMOTE_TOKEN" -F "file=@docs-output/package_$SAFE_BRANCH_NAME.zip" "$REMOTE_URL/upload"
       #- name: Send package via HTTP POST
       #  uses: fjogeleit/http-request-action@v1
       #  with:
       #    url: ${{ secrets.REMOTE_URL }}/upload
       #    method: POST
       #    bearerToken: ${{ secrets.REMOTE_TOKEN }}
+      #    files: '{"file":"output/package_${{ github.ref_name }}.zip"}'
+      #    customHeaders: '{"Content-Type":"multipart/form-data"}'
+
+
       #    files: '{"file":"output/package_${{ github.ref_name }}.zip"}'
       #    customHeaders: '{"Content-Type":"multipart/form-data"}'

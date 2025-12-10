@@ -20,7 +20,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: testcrt
   template:
     metadata:
       labels:

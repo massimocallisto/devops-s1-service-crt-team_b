@@ -44,7 +44,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: app
+    app: testcrt
   ports:
     - name: http
       port: 8000
